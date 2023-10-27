@@ -1,0 +1,17 @@
+https://console.cloud.google.com/workstations/details/europe-west1/cluster-dev-lgf9f7gc/config-dev-lgf9epon/workstation-ln8wa8p6-m-sadeu-ngakou?project=cloudworkstation-dev&rapt=AEjHL4N0r6Ku6Tm9bnWE_jBFpKRYeXPCmx6CaDRHZMXjQqNWwFzvFpnejJ5jiiEOLQZDXKnp4SUBNHMWCl3PrOrp2PSqn3zqBg&pli=1
+https://utbcoop.atlassian.net/wiki/spaces/DEV/pages/4537352718/GCP+Deploiement#GCPDeploiement-Automatiquement.1
+https://console.cloud.google.com/run?project=hexaposte-test
+https://mail.google.com/chat/u/0/#chat/dm/_KGRrUAAAAE
+
+https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list?hl=fr
+https://utbcoop.atlassian.net/jira/software/c/projects/SDEV/issues/SDEV-9117?filter=myopenissues
+
+https://developers.google.com/people/quickstart/python?hl=fr
+https://developers.google.com/gmail/api/quickstart/python?hl=fr
+https://thepythoncode.com/article/use-gmail-api-in-python
+https://stackoverflow.com/questions/61717611/gsuite-service-account-for-directory-api-returns-http-400-errors-bad-request-in
+https://developers.google.com/admin-sdk/directory/v1/quickstart/python?hl=fr
+https://developers.google.com/admin-sdk/directory/v1/quickstart/python?hl=fr
+https://developers.google.com/admin-sdk/directory/v1/quickstart/python?hl=fr
+https://www.geeksforgeeks.org/how-to-read-emails-from-gmail-using-gmail-api-in-python/
+https://contacts.google.com/directory
