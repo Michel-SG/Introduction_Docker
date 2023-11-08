@@ -3,6 +3,8 @@ https://utbcoop.atlassian.net/wiki/spaces/DEV/pages/4537352718/GCP+Deploiement#G
 https://console.cloud.google.com/run?project=hexaposte-test
 https://mail.google.com/chat/u/0/#chat/dm/_KGRrUAAAAE
 
+https://communaute.chorus-pro.gouv.fr/wp-content/uploads/2017/08/20170630_Solution-portail_Dossier_Specifications_Externes_Annexe_Services-API_V3.2.pdf
+
 https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list?hl=fr
 https://utbcoop.atlassian.net/jira/software/c/projects/SDEV/issues/SDEV-9117?filter=myopenissues
 
