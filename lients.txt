@@ -17,3 +17,6 @@ https://developers.google.com/admin-sdk/directory/v1/quickstart/python?hl=fr
 https://developers.google.com/admin-sdk/directory/v1/quickstart/python?hl=fr
 https://www.geeksforgeeks.org/how-to-read-emails-from-gmail-using-gmail-api-in-python/
 https://contacts.google.com/directory
+
+
+curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" --request POST 'https://hexaposte-test-7csksg3spq-ew.a.run.app/hexaposte/update'
