@@ -1,22 +1,51 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build',
-         '--build-arg',
-         'node_version=${_NODE_VERSION_1}',
-         '-t',
-         'gcr.io/$PROJECT_ID/build-substitutions-nodejs-${_NODE_VERSION_1}',
-         '.']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build',
-         '--build-arg',
-         'node_version=${_NODE_VERSION_2}',
-         '-t',
-         'gcr.io/$PROJECT_ID/build-substitutions-nodejs-${_NODE_VERSION_2}',
-         '.']
-substitutions:
-    _NODE_VERSION_1: v6.9.1 # default value
-    _NODE_VERSION_2: v6.9.2 # default value
-images: [
-    'gcr.io/$PROJECT_ID/build-substitutions-nodejs-${_NODE_VERSION_1}',
-    'gcr.io/$PROJECT_ID/build-substitutions-nodejs-${_NODE_VERSION_2}'
-]
+  - id: "build image"
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', '$_AR_HOSTNAME/$PROJECT_ID/$_IMAGE_NAME', '.']
+  - id: "push image"
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '$_AR_HOSTNAME/$PROJECT_ID/$_IMAGE_NAME']
+  - id: "apply migrations"
+    name: "gcr.io/google-appengine/exec-wrapper"
+    args:
+        [
+          "-i",
+          "$_AR_HOSTNAME/$PROJECT_ID/$_IMAGE_NAME",
+          "-s",
+          "${_DB_INSTANCE_NAME}",
+          "-e",
+          "SETTINGS_NAME=${_SECRET_SETTINGS_NAME}",
+          "--",
+          "python",
+          "manage.py",
+          "migrate",
+        ]
+  - id: "collect static"
+    name: "gcr.io/google-appengine/exec-wrapper"
+    args:
+        [
+          "-i",
+          "$_AR_HOSTNAME/$PROJECT_ID/$_IMAGE_NAME",
+          "-s",
+          "${_DB_INSTANCE_NAME}",
+          "-e",
+          "SETTINGS_NAME=${_SECRET_SETTINGS_NAME}",
+          "--",
+          "python",
+          "manage.py",
+          "collectstatic",
+          "--verbosity",
+          "2",
+          "--no-input",
+        ]
+
+  - id: "Deploy image and run container"
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy','--no-traffic', '${_SERVICE_NAME}', '--image',  '$_AR_HOSTNAME/$PROJECT_ID/$_IMAGE_NAME', 
+      '--region', '${_DEPLOY_REGION}', '--platform', 'managed',
+      '--add-cloudsql-instances=${_DB_INSTANCE_NAME}',
+  ]
+
+images:
+- $_AR_HOSTNAME/$PROJECT_ID/$_IMAGE_NAME
