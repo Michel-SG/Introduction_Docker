@@ -9,3 +9,9 @@ gcloud run services update-traffic --to-latest
 # Choisir ensuite :
 # region : europe-west1 [15]
 # service (du cloud run) : pdfprinter
+
+
+Créer un répertoire pour reception d'images dans artifact registry :
+gcloud auth login
+gcloud config set project dsi-jobs-test
+gcloud artifacts repositories create cf-artifacts --repository-format=docker --location=europe-west1 --description="cf-artifacts Docker repository"
