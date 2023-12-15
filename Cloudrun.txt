@@ -1,0 +1,11 @@
+Re-établir le traffic avec le Flag "--no-traffic"
+
+gcloud config set project pdfprinter
+ 
+# Inutile si vous etes deja authentifie
+# gcloud auth activate-service-account --key-file=service-account.json
+ 
+gcloud run services update-traffic --to-latest
+# Choisir ensuite :
+# region : europe-west1 [15]
+# service (du cloud run) : pdfprinter
