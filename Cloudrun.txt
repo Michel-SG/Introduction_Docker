@@ -15,3 +15,13 @@ Créer un répertoire pour reception d'images dans artifact registry :
 gcloud auth login
 gcloud config set project dsi-jobs-test
 gcloud artifacts repositories create cf-artifacts --repository-format=docker --location=europe-west1 --description="cf-artifacts Docker repository"
+
+
+#Deploy_test.sh
+
+gcloud config set project pdfprinter-test
+gcloud config set compute/region europe-west1
+
+gcloud builds submit --tag eu.gcr.io/pdfprinter-test/master --gcs-source-staging-dir=gs://eu.artifacts.pdfprinter-test.appspot.com/containers/images
+
+gcloud run deploy pdfprinter-test --image eu.gcr.io/pdfprinter-test/master --platform managed --region=europe-west1 --allow-unauthenticated
