@@ -22,3 +22,6 @@ https://contacts.google.com/directory
 curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" --request POST 'https://hexaposte-test-7csksg3spq-ew.a.run.app/hexaposte/update'
 
 https://pdfprinter.utb.coop/admin/
+
+https://pdfprinter-test.utb.coop/admin/
+pwd: VaaZQWlTFGk=
