@@ -29,3 +29,6 @@ pwd: VaaZQWlTFGk=
 ## pour faire un postman en prod :
 gateway = https://pdfprinter-gateway-85jq0q7f.ew.gateway.dev/
 api key = AIzaSyAye0y9eNzUKDgcj9Q_y7Xa9UM7hbuItVw 
+
+a.mounier@utb.fr
+q.michard@utb.fr
