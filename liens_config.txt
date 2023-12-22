@@ -1,0 +1,100 @@
+Lien pour bitbuket:
+https://bitbucket.utb.fr/projects/PYL/repos/hexaposteplatform/browse
+Lien git:
+git clone --single-branch --branch <dev> <repositoryUrl>
+Lien pour tourner l'appli Django sur Cloud Run:
+https://cloud.google.com/python/django/run?hl=fr
+
+Cours secret manager video:
+https://www.youtube.com/watch?v=oY27Brp6MtU
+
+Docs:
+https://utbcoop.atlassian.net/wiki/spaces/DEV/pages/4537352718/GCP+Deploiement#GCPDeploiement-Automatiquement.1
+
+Lien google-auth package:
+- https://google-auth.readthedocs.io/en/master/reference/google.auth.html
+
+Lien pour récupérer les salariés d'UTB:
+- https://contacts.google.com/directory
+
+Lien pour générer un tocken.json
+- gcloud iam service-accounts keys create key.json --iam-account=hexaposte@hexaposte-test.iam.gserviceaccount.com
+
+
+Lien pour envoyer, supprimer et recevoir les messages google:
+ - https://thepythoncode.com/article/use-gmail-api-in-python
+
+Lien video pour manipuler le compte Gmail en utilisant un compte service:
+- https://www.youtube.com/watch?v=SpmWlHRVn9c
+
+Lien pour configurer un Job Cloud Run avec un Scheduler:
+- https://cloud.google.com/run/docs/execute/jobs-on-schedule?hl=fr
+
+Lien pour manipuler Google Drive avec un compte de service:
+- https://www.youtube.com/watch?v=sVURhxyc6jE
+
+Lien pour utiliser le service account:
+ - https://developers.google.com/zero-touch/guides/customer/quickstart/python-service-account?hl=fr
+
+Lien pour les user liste directory :
+ - https://developers.google.com/admin-sdk/directory/v1/quickstart/python?hl=fr
+
+
+Savoir sur quel projet on est:
+- gcloud config get-value project
+S'autentifier:
+- gcloud auth login
+Lancer une requête:
+- curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" --request GET 'https://hexaposte-test-7csksg3spq-ew.a.run.app/hexaposte/api/db/?zip__exact=33160'
+
+Générer une clef ssh:
+ssh-keygen -t rsa
+
+Lien pour configurer ssh key:
+https://support.atlassian.com/bitbucket-cloud/docs/set-up-personal-ssh-keys-on-linux/
+
+Demarrer un agent (start the agent):
+eval $(ssh-agent)
+
+Ajouter la clé à l'agent (add your key to the SSH agent):
+ssh-add ~/{ssh-key-name}
+
+
+Installation de postgresql:
+1- # Create the file repository configuration:
+sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+2- # Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+3- # Update the package lists:
+sudo apt-get update
+
+4- # Install the latest version of PostgreSQL.
+# If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+sudo apt-get -y install postgresql
+
+Pour demmarer le service postgresql sur workstation:
+Il faut tout d'abord autoriser tous les hosts avec :
+1- # IPv4 remote connections for the demo:
+host    all             all           0.0.0.0/0         md5
+
+2- en suite tester si le service tourne:
+ $ sudo service postgresql restart
+
+3- Se logger en tant que postgres
+-$  sudo su - postgres
+
+4- Entrer le mot de pass (plusieurs fois si possible)
+
+5- Entrer dans le propt de postgres:
+ -$ psql
+6- Ajouter un mot de passe pour se connecter à la base avec pgadmin
+-$ ALTER USER postgres PASSWORD 'postgres'
+
+7- se déconnecter du propt:
+-$ \q
+-$ exit
+
+Lien youtube apprendre django:
+https://www.youtube.com/watch?v=KyLdV-J6_Y0
