@@ -1,3 +1,6 @@
+Lien pour installer postgresql sur windows:
+https://www.youtube.com/watch?v=miEFm1CyjfM
+
 Lien pour bitbuket:
 https://bitbucket.utb.fr/projects/PYL/repos/hexaposteplatform/browse
 Lien git:
