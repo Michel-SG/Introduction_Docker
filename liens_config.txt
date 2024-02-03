@@ -63,7 +63,9 @@ Ajouter la clé à l'agent (add your key to the SSH agent):
 ssh-add ~/{ssh-key-name}
 
 
-Installation de postgresql:
+Installation de postgresql sur Mac, ubuntu et windows:
+- https://www.youtube.com/watch?v=JFELFNII60U&list=PLS1QulWo1RIa-sDLWbP01sEnlm_Bxmvqs&index=2
+Installation de postgresql sur ubuntu:
 1- # Create the file repository configuration:
 sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
