@@ -1,0 +1,20 @@
+adduser/useradd michel  (ajout d'un user appelé michel) (vérifier le résultat dans /etc/passwd avec cat /etc/passwd).
+grep "michel" * (recherche de michel partout)
+groupadd/addgroup test  (créer/ajout d'un groupe appelé test) (vérifier le résultat dans /etc/group avec la commande cat /etc/group)
+groupdel test (supprimer le groupe test)
+userdel michel (supprimer le user michel)
+id michel (permet de connaître à quel groupe appartient michel)
+usermod -g root michel (veut dire dorenavant michel appartiendra au groupe root)
+chgrp root fichier1 (le fichier1 appartient maintenant au groupe root)
+chown michel fichier1 ( michel est maintenant le propriétaire du fichier1)
+chown root:michel fichier1 (le fichier1 a pour propriétaire root et pour groupe michel)
+
+d rwx rwx rwx (d 421 421 421)(d = repertoire, premier rwx  = droits du propriétaire, deuxieme rwx = groupe dans lequel appartient le propriétaire, et le dernier rwx = les autres)
+chmod 777 fichier1 (donner tous les droits au propriétaire, groupe et les autres pour le fichier1) (4+2+1 4+2+1 4+2+1 = 777) (rwx rwx rwx)
+chmod 444 fichier1 (tout le monde a le droit de lecture uniquement) ( 4+0+0 4+0+0 4+0+0 = 444)(r-- r-- r--)
+chmod 400 fichier1 (sauf le propriétaire a les droits de lecture et les autres n'ont aucun droit)
+chmod a+x fichier1 (tout le monde a le droit d'exécution)
+chmod o-x fichier1 (on enlève le droit d'exécution à tous les autres)
+chmod g+rwx fichier1 (seul le ghroupe a les droits de lecture, d'écriture et d'exécution)
+
+passwd michel (permet de changer le mot de passe de michel)(ça ouvre la main pour modifier le mot de passe directement en cli)
