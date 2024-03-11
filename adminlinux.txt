@@ -18,3 +18,13 @@ chmod o-x fichier1 (on enlève le droit d'exécution à tous les autres)
 chmod g+rwx fichier1 (seul le ghroupe a les droits de lecture, d'écriture et d'exécution)
 
 passwd michel (permet de changer le mot de passe de michel)(ça ouvre la main pour modifier le mot de passe directement en cli)
+
+
+UTILISATION DE L'éditeur Nano
+nano -miA file.txt (miA= pour utiliser la sourie et faire de l'auto indentation durectemant dans le fichier)
+
+UTILISATION DE Vi
+(en mode echap il faut placer le curseur sur une ligne et taper : yy (pour copier la ligne) puis p (pour coller))
+(en mode echap il faut taper : 2 puis yy (pour copier deux lignes suivantes) puis p (pour coller))
+(en mode echap il faut taper : u (pour annuler ce que vous avez collé))
+Sur Vi, crtl Z est remplacé par du crtl R
