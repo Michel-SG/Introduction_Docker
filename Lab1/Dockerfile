@@ -4,4 +4,4 @@ RUN apt-get update
 RUN apt-get install -y nginx 
 EXPOSE 80
 ADD . /var/www/html/
-ENTRYPOINT ["/usr/sbin/ngnx", "-g", "daemon off;"]
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
