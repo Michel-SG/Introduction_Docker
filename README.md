@@ -1,5 +1,5 @@
 # Introduction_Docker
-## 2. Pour Ubuntu 22.04 (Jammy) ou supérieur
+## 1. Pour Ubuntu 22.04 (Jammy) ou supérieur
 ## libssl1.1 n'est plus disponible dans les dépôts par défaut. Vous pouvez télécharger et installer manuellement le paquet :
 
 
@@ -19,7 +19,7 @@ CMD ["/usr/local/bin/your_application"]
 
 
 
-# Solution Alternative : Installer libssl3 et Mettre à Jour Votre Application
+## 2. Solution Alternative : Installer libssl3 et Mettre à Jour Votre Application
 ## Si vous pouvez modifier l'application ou les dépendances, envisagez de passer à libssl3, qui est inclus par défaut dans Ubuntu 22.04.
 
 FROM ubuntu:22.04
@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y libssl3 openjdk-11-jdk git curl && rm -
 ## ...
 
 
-# Exemple Complet de Dockerfile
+## Exemple Complet de Dockerfile pour vérifier l'installation de libssl1.1
 #### Voici un Dockerfile complet vérifiant que libssl1.1 est installé correctement et fonctionne pour une application tierce :
 
 FROM ubuntu:22.04
